@@ -17,3 +17,7 @@ projets-edition:
 projets-creation:
     path:     /projets/creation
     defaults: { _controller: FrontEndFrontOfficeBundle:Projets:create }
+
+tasks-creation:
+    path:     /projets/{project_id}/{project_name}/tasks/creation
+    defaults: { _controller: FrontEndFrontOfficeBundle:Tasks:create }
