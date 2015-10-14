@@ -1,0 +1,4 @@
+services:
+#    front_end_front_office.example:
+#        class: FrontEnd\FrontOfficeBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

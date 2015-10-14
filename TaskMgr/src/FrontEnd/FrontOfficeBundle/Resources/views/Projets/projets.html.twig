@@ -1,0 +1,99 @@
+{% extends 'FrontEndFrontOfficeBundle::FrontOffice.html.twig' %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+        'js/raphael.min.js'
+        'js/morris.min.js'
+        'js/pages/index.js'
+        output='js/compiled/page.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    
+    <script type="text/javascript">
+        var projects = new Array();
+        {% for p in projects %}
+            projects.push(
+                {
+                    label: "{{ p.infos.name }}",
+                    value: "{{ p.tasks|length }}"
+                }
+            );
+        {% endfor %}
+    </script>
+{% endblock %}
+
+{% block title %}Task Manager -- Projets{% endblock %}
+
+{% block menu %}
+    {{ include ('FrontEndFrontOfficeBundle:Projets:projets-menu.html.twig', {'projects' : projects}) }}
+{% endblock %}
+
+{% block content %}
+
+    <div id="wrapper">
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Dashboard
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-map-signs"></i> 
+                                <a href="{{ path('projets-index', {}) }}">Projets</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> Dashboard
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="panel panel-primary margin-bottom-20">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">Tâches en cours</div>
+                            
+                            <!-- List group -->
+                            <ul class="list-group">
+                                {% for t in tasks %}
+                                    <li class="list-group-item">
+                                        <span class="inline-block">{{ t.name }}</span>
+                                        <small><span class="inline-block">({{ t.project }})</span></small>
+                                        <span class="label {{ priorities[t.prio_id] }} inline-block pull-right">{{ t.prio_name }}</span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="align-center">Nombre de tâches/projets</h3>
+                        <div id="graph-projects"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-3">
+                        <div class="panel panel-primary">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">Projets en cours</div>
+                            
+                            <!-- List group -->
+                            <ul class="list-group">
+                                {% for p in projects %}
+                                    <li class="list-group-item">
+                                        <span class="inline-block">{{ p.infos.name }}</span>
+                                        {#<span class="label label-info inline-block">{{ p.infos.language }}</span>#}
+                                        <span class="badge inline-block">{{ p.state }}%</span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

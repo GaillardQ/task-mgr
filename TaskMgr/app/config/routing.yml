@@ -1,0 +1,5 @@
+front_end_front_office:
+    resource: "@FrontEndFrontOfficeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

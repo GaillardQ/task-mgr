@@ -1,0 +1,19 @@
+homepage:
+    path:     /
+    defaults: { _controller: FrontEndFrontOfficeBundle:Index:index }
+    
+projets-index:
+    path:     /projets
+    defaults: { _controller: FrontEndFrontOfficeBundle:Projets:projets }
+    
+projets-details:
+    path:     /projets/infos/{id}/{name}
+    defaults: { _controller: FrontEndFrontOfficeBundle:Projets:details }
+    
+projets-edition:
+    path:     /projets/infos/{id}/{name}/edition
+    defaults: { _controller: FrontEndFrontOfficeBundle:Projets:edit }
+
+projets-creation:
+    path:     /projets/creation
+    defaults: { _controller: FrontEndFrontOfficeBundle:Projets:create }

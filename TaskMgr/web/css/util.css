@@ -1,0 +1,100 @@
+/** BACKGROUND **/
+.bgd-white {
+	background-color: white;
+}
+
+/** DISPLAY **/
+.display-none
+{
+    display: none;
+}
+.inline-block {
+	display: inline-block;
+}
+
+/** MARGIN **/
+.margin-10 {
+	margin: 10px;
+}
+.margin-20 {
+	margin: 20px;
+}
+.margin-top-10 {
+	margin-top: 10px;
+}
+.margin-top-20 {
+	margin-top: 20px;
+}
+.margin-top-50 {
+	margin-top: 50px;
+}
+.margin-bottom-10 {
+	margin-bottom: 10px;
+}
+.margin-bottom-20 {
+	margin-bottom: 20px;
+}
+.margin-bottom-50 {
+	margin-bottom: 50px;
+}
+.margin-right-5 {
+	margin-right: 5px;
+}
+.margin-auto {
+	margin: auto;
+}
+
+
+/** PADDING **/
+.no-padding {
+	padding: 0 !important;
+}
+.padding-20 {
+	padding: 20px;
+}
+.padding-right-5 {
+	padding-right: 5px;
+}
+.padding-bottom-20 {
+	padding-bottom: 20px !important;
+}
+
+
+/** TEXT **/
+.weight-bolder {
+	font-weight: bolder;
+}
+.small-10 {
+	font-size: 10px;
+}
+
+
+/** TEXT ALIGN **/
+.align-center {
+	text-align: center;
+}
+.align-left {
+	text-align: left;
+}
+.align-right {
+	text-align: right;
+}
+.valign-middle {
+	vertical-align: middle;
+}
+
+
+/** WIDTH **/
+.width-parent {
+	width: 100%;
+}
+
+
+
+
+/**********
+	DEV 
+**********/
+.dev-border {
+	border: 1px dashed red;
+}

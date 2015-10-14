@@ -1,0 +1,54 @@
+[06-Oct-2015 14:11:15 UTC] PHP Fatal error:  Call to undefined method Doctrine\ORM\QueryBuilder::limit() in /home/ubuntu/workspace/www/TaskMgr/src/FrontEnd/FrontOfficeBundle/Entity/TaskRepository.php on line 17
+[06-Oct-2015 14:11:15 UTC] PHP Stack trace:
+[06-Oct-2015 14:11:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/www/TaskMgr/web/app_dev.php:0
+[06-Oct-2015 14:11:15 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/www/TaskMgr/web/app_dev.php:29
+[06-Oct-2015 14:11:15 UTC] PHP   3. Symfony\Component\HttpKernel\DependencyInjection\ContainerAwareHttpKernel->handle() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:2444
+[06-Oct-2015 14:11:15 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3222
+[06-Oct-2015 14:11:15 UTC] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3071
+[06-Oct-2015 14:11:15 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109}() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109
+[06-Oct-2015 14:11:15 UTC] PHP   7. FrontEnd\FrontOfficeBundle\Controller\IndexController->indexAction() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109
+[06-Oct-2015 14:11:15 UTC] PHP   8. FrontEnd\FrontOfficeBundle\Entity\TaskRepository->findLastTaskToDo() /home/ubuntu/workspace/www/TaskMgr/src/FrontEnd/FrontOfficeBundle/Controller/IndexController.php:14
+[07-Oct-2015 13:30:05 UTC] PHP Fatal error:  Call to undefined method Doctrine\ORM\QueryBuilder::getResult() in /home/ubuntu/workspace/www/TaskMgr/src/FrontEnd/FrontOfficeBundle/Entity/TaskRepository.php on line 41
+[07-Oct-2015 13:30:05 UTC] PHP Stack trace:
+[07-Oct-2015 13:30:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/www/TaskMgr/web/app_dev.php:0
+[07-Oct-2015 13:30:05 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/www/TaskMgr/web/app_dev.php:29
+[07-Oct-2015 13:30:05 UTC] PHP   3. Symfony\Component\HttpKernel\DependencyInjection\ContainerAwareHttpKernel->handle() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:2444
+[07-Oct-2015 13:30:05 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3222
+[07-Oct-2015 13:30:05 UTC] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3071
+[07-Oct-2015 13:30:05 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109}() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109
+[07-Oct-2015 13:30:05 UTC] PHP   7. FrontEnd\FrontOfficeBundle\Controller\ProjetsController->detailsAction() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109
+[07-Oct-2015 13:30:05 UTC] PHP   8. FrontEnd\FrontOfficeBundle\Entity\TaskRepository->findByProject() /home/ubuntu/workspace/www/TaskMgr/src/FrontEnd/FrontOfficeBundle/Controller/ProjetsController.php:38
+[07-Oct-2015 13:30:30 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ubuntu/workspace/www/TaskMgr/src/FrontEnd/FrontOfficeBundle/Entity/TaskRepository.php on line 40
+[07-Oct-2015 13:30:30 UTC] PHP Stack trace:
+[07-Oct-2015 13:30:30 UTC] PHP   1. {main}() /home/ubuntu/workspace/www/TaskMgr/web/app_dev.php:0
+[07-Oct-2015 13:30:30 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/www/TaskMgr/web/app_dev.php:29
+[07-Oct-2015 13:30:30 UTC] PHP   3. Symfony\Component\HttpKernel\DependencyInjection\ContainerAwareHttpKernel->handle() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:2444
+[07-Oct-2015 13:30:30 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3222
+[07-Oct-2015 13:30:30 UTC] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3071
+[07-Oct-2015 13:30:30 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109}() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109
+[07-Oct-2015 13:30:30 UTC] PHP   7. FrontEnd\FrontOfficeBundle\Controller\ProjetsController->detailsAction() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109
+[07-Oct-2015 13:30:30 UTC] PHP   8. Doctrine\Common\Persistence\AbstractManagerRegistry->getRepository() /home/ubuntu/workspace/www/TaskMgr/src/FrontEnd/FrontOfficeBundle/Controller/ProjetsController.php:37
+[07-Oct-2015 13:30:30 UTC] PHP   9. Doctrine\ORM\EntityManager->getRepository() /home/ubuntu/workspace/www/TaskMgr/app/cache/dev/classes.php:6941
+[07-Oct-2015 13:30:30 UTC] PHP  10. Doctrine\ORM\Repository\DefaultRepositoryFactory->getRepository() /home/ubuntu/workspace/www/TaskMgr/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php:698
+[07-Oct-2015 13:30:30 UTC] PHP  11. Doctrine\ORM\Repository\DefaultRepositoryFactory->createRepository() /home/ubuntu/workspace/www/TaskMgr/vendor/doctrine/orm/lib/Doctrine/ORM/Repository/DefaultRepositoryFactory.php:50
+[07-Oct-2015 13:30:30 UTC] PHP  12. spl_autoload_call() /home/ubuntu/workspace/www/TaskMgr/vendor/doctrine/orm/lib/Doctrine/ORM/Repository/DefaultRepositoryFactory.php:68
+[07-Oct-2015 13:30:30 UTC] PHP  13. Symfony\Component\Debug\DebugClassLoader->loadClass() /home/ubuntu/workspace/www/TaskMgr/vendor/doctrine/orm/lib/Doctrine/ORM/Repository/DefaultRepositoryFactory.php:68
+[14-Oct-2015 13:35:34 UTC] PHP Fatal error:  Class 'FrontEnd\FrontOfficeBundle\Controller\ProjectType' not found in /home/ubuntu/workspace/www/TaskMgr/src/FrontEnd/FrontOfficeBundle/Controller/ProjetsController.php on line 105
+[14-Oct-2015 13:35:34 UTC] PHP Stack trace:
+[14-Oct-2015 13:35:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/www/TaskMgr/web/app_dev.php:0
+[14-Oct-2015 13:35:34 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/www/TaskMgr/web/app_dev.php:29
+[14-Oct-2015 13:35:34 UTC] PHP   3. Symfony\Component\HttpKernel\DependencyInjection\ContainerAwareHttpKernel->handle() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:2444
+[14-Oct-2015 13:35:34 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3222
+[14-Oct-2015 13:35:34 UTC] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3071
+[14-Oct-2015 13:35:34 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109}() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109
+[14-Oct-2015 13:35:34 UTC] PHP   7. FrontEnd\FrontOfficeBundle\Controller\ProjetsController->createAction() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109
+[14-Oct-2015 14:46:18 UTC] PHP Fatal error:  Call to a member function getProject() on a non-object in /home/ubuntu/workspace/www/TaskMgr/src/FrontEnd/FrontOfficeBundle/Entity/ProjectRepository.php on line 94
+[14-Oct-2015 14:46:18 UTC] PHP Stack trace:
+[14-Oct-2015 14:46:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/www/TaskMgr/web/app_dev.php:0
+[14-Oct-2015 14:46:18 UTC] PHP   2. Symfony\Component\HttpKernel\Kernel->handle() /home/ubuntu/workspace/www/TaskMgr/web/app_dev.php:29
+[14-Oct-2015 14:46:18 UTC] PHP   3. Symfony\Component\HttpKernel\DependencyInjection\ContainerAwareHttpKernel->handle() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:2444
+[14-Oct-2015 14:46:18 UTC] PHP   4. Symfony\Component\HttpKernel\HttpKernel->handle() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3222
+[14-Oct-2015 14:46:18 UTC] PHP   5. Symfony\Component\HttpKernel\HttpKernel->handleRaw() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3071
+[14-Oct-2015 14:46:18 UTC] PHP   6. call_user_func_array:{/home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109}() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109
+[14-Oct-2015 14:46:18 UTC] PHP   7. FrontEnd\FrontOfficeBundle\Controller\ProjetsController->detailsAction() /home/ubuntu/workspace/www/TaskMgr/app/bootstrap.php.cache:3109
+[14-Oct-2015 14:46:18 UTC] PHP   8. FrontEnd\FrontOfficeBundle\Entity\ProjectRepository->findProjectsAndState() /home/ubuntu/workspace/www/TaskMgr/src/FrontEnd/FrontOfficeBundle/Controller/ProjetsController.php:65
