@@ -14,6 +14,10 @@ class TaskType extends AbstractType
         $builder
             ->add('name')
             ->add('comment')
+            ->add('state', 'entity', array(
+                'class' => 'FrontEndFrontOfficeBundle:Task_State',
+                'choice_label' => 'name',
+            ))
             ->add('priority', 'entity', array(
                 'class' => 'FrontEndFrontOfficeBundle:Task_Priority',
                 'choice_label' => 'name',

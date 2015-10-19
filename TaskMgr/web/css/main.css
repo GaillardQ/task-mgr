@@ -36,6 +36,9 @@ body {
 .page-header .label {
     padding: 0.2em 0.6em 0.1em;
 }
+.list-group-item-link {
+    cursor: pointer;
+}
 
 
 /********************************************************/

@@ -75,4 +75,64 @@ class TasksController extends Controller
             'form' => $form->createView()
         ));
     }
+    
+    public function editAction($project_id, $project_name, $id, Request $request)
+    {
+        $projects = $this->getDoctrine()
+            ->getRepository('FrontEndFrontOfficeBundle:Project')
+            ->findProjectsAndState();
+        
+        $state = $this->getDoctrine()
+            ->getRepository('FrontEndFrontOfficeBundle:Task_State')
+            ->find(Task_State::TODO);
+        
+        $task = $this->getDoctrine()
+            ->getRepository("FrontEndFrontOfficeBundle:Task")
+            ->find($id);
+        
+        $form = $this->createForm(new TaskType(), $task, array(
+            'action' => $this->generateUrl('tasks-edition', array("project_id" => $project_id, "project_name" => $project_name, "id" => $task->getId())),
+            'method' => 'POST',
+        ));
+        
+        if ('POST' === $request->getMethod()) {
+            $form->bind($request);
+
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($task);
+                $em->flush();
+                
+                return $this->redirect($this->generateUrl('projets-details', array(
+                    "id" => $project_id,
+                    "name" => $project_name
+                )));
+            }
+        }
+            
+        return $this->render('FrontEndFrontOfficeBundle:Taches:taches-edit.html.twig', array(
+            'projects' => $projects,
+            'project_name' => $project_name,
+            'task' => $task,
+            'project_id' => $project_id,
+            'form' => $form->createView()
+        ));
+    }
+    
+    public function deleteAction($project_id, $project_name, $id, Request $request)
+    {
+        $task = $this->getDoctrine()
+            ->getRepository("FrontEndFrontOfficeBundle:Task")
+            ->find($id);
+            
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($task);
+        $em->flush();
+        
+        return $this->redirect($this->generateUrl('projets-details', array(
+                    "id" => $project_id,
+                    "name" => $project_name
+                )));
+        
+    }
 }

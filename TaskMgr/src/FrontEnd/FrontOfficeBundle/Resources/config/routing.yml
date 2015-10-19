@@ -21,3 +21,11 @@ projets-creation:
 tasks-creation:
     path:     /projets/{project_id}/{project_name}/tasks/creation
     defaults: { _controller: FrontEndFrontOfficeBundle:Tasks:create }
+    
+tasks-edition:
+    path:     /projets/{project_id}/{project_name}/tasks/{id}/edition
+    defaults: { _controller: FrontEndFrontOfficeBundle:Tasks:edit }
+    
+tasks-delete:
+    path:     /projets/{project_id}/{project_name}/tasks/{id}/delete
+    defaults: { _controller: FrontEndFrontOfficeBundle:Tasks:delete }

@@ -69,8 +69,8 @@ class TaskRepository extends \Doctrine\ORM\EntityRepository
             ->leftjoin('t.priority', 'p')
             ->leftjoin('t.state', 's')
             ->orderBy('pr.id', 'ASC')
-            ->addOrderBy('t.priority', 'ASC')
             ->addOrderBy('t.state', 'ASC')
+            ->addOrderBy('t.priority', 'ASC')
             ->getQuery();
             
         return $query->getResult();

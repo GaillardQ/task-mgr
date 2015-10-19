@@ -35,13 +35,14 @@ class ProjetsController extends Controller
     {
         $tasks = $this->getDoctrine()
             ->getRepository('FrontEndFrontOfficeBundle:Task')
-            ->findLastTaskToDo(10);
+            ->findLastTaskToDo(5);
             
         $priorities = $this->getLabelsClassPriorities();
             
-        $projects = $this->getDoctrine()
+        $allProjects = $this->getDoctrine()
             ->getRepository('FrontEndFrontOfficeBundle:Project')
             ->findProjectsAndState();
+        $projects = array_slice($allProjects, 0, 5, true);
         
         return $this->render('FrontEndFrontOfficeBundle:Projets:projets.html.twig', array(
             'tasks' => $tasks, 

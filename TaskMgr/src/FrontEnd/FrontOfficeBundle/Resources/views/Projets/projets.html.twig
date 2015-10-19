@@ -52,44 +52,48 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="panel panel-primary margin-bottom-20">
-                            <!-- Default panel contents -->
-                            <div class="panel-heading">Tâches en cours</div>
-                            
-                            <!-- List group -->
-                            <ul class="list-group">
-                                {% for t in tasks %}
-                                    <li class="list-group-item">
-                                        <span class="inline-block">{{ t.name }}</span>
-                                        <small><span class="inline-block">({{ t.project }})</span></small>
-                                        <span class="label {{ priorities[t.prio_id] }} inline-block pull-right">{{ t.prio_name }}</span>
-                                    </li>
-                                {% endfor %}
-                            </ul>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="panel panel-primary margin-bottom-20">
+                                    <!-- Default panel contents -->
+                                    <div class="panel-heading">Tâches en cours</div>
+                                    
+                                    <!-- List group -->
+                                    <ul class="list-group">
+                                        {% for t in tasks %}
+                                            <li class="list-group-item">
+                                                <span class="inline-block">{{ t.name }}</span>
+                                                <small><span class="inline-block">({{ t.project }})</span></small>
+                                                <span class="label {{ priorities[t.prio_id] }} inline-block pull-right">{{ t.prio_name }}</span>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="panel panel-primary">
+                                    <!-- Default panel contents -->
+                                    <div class="panel-heading">Projets en cours</div>
+                                    
+                                    <!-- List group -->
+                                    <ul class="list-group">
+                                        {% for p in projects %}
+                                            <li class="list-group-item list-group-item-link" onclick="location.href='{{ path('projets-details', {id: p.infos.id, name: p.infos.name}) }}'">
+                                                <span class="inline-block">{{ p.infos.name }}</span>
+                                                {#<span class="label label-info inline-block">{{ p.infos.language }}</span>#}
+                                                <span class="badge inline-block pull-right">{{ p.progress }}%</span>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <h3 class="align-center">Nombre de tâches/projets</h3>
                         <div id="graph-projects"></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-lg-offset-3">
-                        <div class="panel panel-primary">
-                            <!-- Default panel contents -->
-                            <div class="panel-heading">Projets en cours</div>
-                            
-                            <!-- List group -->
-                            <ul class="list-group">
-                                {% for p in projects %}
-                                    <li class="list-group-item">
-                                        <span class="inline-block">{{ p.infos.name }}</span>
-                                        {#<span class="label label-info inline-block">{{ p.infos.language }}</span>#}
-                                        <span class="badge inline-block">{{ p.progress }}%</span>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
