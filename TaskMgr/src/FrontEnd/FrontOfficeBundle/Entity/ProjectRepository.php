@@ -60,9 +60,8 @@ class ProjectRepository extends \Doctrine\ORM\EntityRepository
             {
                 $percent = 0;
             }
-            $res[$k]['state'] = $percent;
+            $res[$k]['progress'] = $percent;
         }
-        
         return $res;
     }
 }

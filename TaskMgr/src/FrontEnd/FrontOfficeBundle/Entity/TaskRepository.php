@@ -22,6 +22,8 @@ class TaskRepository extends \Doctrine\ORM\EntityRepository
             ->leftjoin('t.project', 'pr')
             ->leftjoin('t.priority', 'p')
             ->leftjoin('t.state', 's')
+            ->where('s.id != '.Task_State::DONE)
+            ->andWhere('s.id != '.Task_State::CANCELLED)
             ->orderby('t.priority', 'ASC')
             ->addOrderby('t.addedAt', 'DESC')
             ->setMaxResults($limit)

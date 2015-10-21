@@ -15,7 +15,7 @@
         {% for p in projects %}
             projects.push(
                 {
-                    label: "{{ p.infos.name }}",
+                    label: "{{ p.infos.name|raw }}",
                     value: "{{ p.tasks|length }}"
                 }
             );
