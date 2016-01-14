@@ -12,9 +12,11 @@
                 </li>
                 <li>
                     <a data-target="#projects-list" data-toggle="collapse" href="javascript:;">
-                        <i class="fa fa-fw fa-tags"></i>&nbspListe des projets&nbsp&nbsp<i class="fa fa-fw fa-caret-down"></i>
+                        <i class="fa fa-fw fa-tags"></i>
+                        &nbspListe des projets&nbsp&nbsp
+                        <!-- <i class="fa fa-fw fa-caret-down"></i> -->
                     </a>
-                    <ul class="collapse" id="projects-list" aria-expanded="false" style="">
+                    <ul class="collapse in" id="projects-list" aria-expanded="false" style="">
                         {% for p in projects %}
                             <li>
                                 <a href="{{ path('projets-details', {id: p.infos.id, name: p.infos.name}) }}">{{ p.infos.name }}</a>
