@@ -47,7 +47,6 @@ body {
     ID
  ********/
 #page-wrapper {
-    margin-bottom: 50px;
     min-height: 86vh;
     padding-top: 25px;
 }
@@ -57,5 +56,31 @@ body {
     #page-wrapper {
         padding-top: 70px;    
     }
+}
+
+#home-logo {
+    margin: 0 auto 20px;
+    display: block;
+    height: auto;
+    max-width: 100%;
+    background-color:gray;
+}
+
+#home-text {
+    display: block;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 4.75em;
+}
+
+#footer
+{
+    margin-left: 225px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    color: #9d9d9d;
 }
 /********************************************************/

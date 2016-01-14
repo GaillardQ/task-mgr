@@ -2,33 +2,37 @@
 
 namespace FrontEnd\FrontOfficeBundle\Controller;
 
-use FrontEnd\FrontOfficeBundle\Entity\Task_Priority;
-
+use FrontEnd\FrontOfficeBundle\Entity\User;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class IndexController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        $securityContext = $this->container->get('security.context');
+        if($securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED') || $securityContext->isGranted('IS_AUTHENTICATED_FULLY')){
+            return $this->redirect($this->generateUrl('projets-index'));
+        }
         
-        $tasks = $this->getDoctrine()
-            ->getRepository('FrontEndFrontOfficeBundle:Task')
-            ->findLastTaskToDo(10);
-            
-        $priorities = array(
-            Task_Priority::HIGH => 'label-danger',
-            Task_Priority::MEDIUM => 'label-warning',
-            Task_Priority::LOW => 'label-success',
-        );
-            
-        $projects = $this->getDoctrine()
-            ->getRepository('FrontEndFrontOfficeBundle:Project')
-            ->findProjectsAndState();
+        $authenticationUtils = $this->get('security.authentication_utils');
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+        
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
         
         return $this->render('FrontEndFrontOfficeBundle:Index:index.html.twig', array(
-            'tasks' => $tasks, 
-            'priorities' => $priorities, 
-            'projects' => $projects
+            "error" => $error,
+            "last_username" => $lastUsername
         ));
     }
+    
+    public function loginCheckAction()
+    {}
+    
+    public function logout()
+    {}
 }

@@ -1,24 +1,42 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/book/security.html
 security:
+    encoders:
+        FrontEnd\FrontOfficeBundle\Entity\User:
+            algorithm: md5
+            encode_as_base64: false
+            iterations: 0
+        
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory:
-            memory: ~
+        our_db_provider:
+            entity:
+                class: FrontEndFrontOfficeBundle:User
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
+    
         main:
-            anonymous: ~
-            # activate different ways to authenticate
+            pattern: ^/
+            anonymous: true
+            form_login:
+                login_path: /
+                check_path: /login_check
+                csrf_provider: security.csrf.token_manager
+                default_target_path: projets-index
+                always_use_default_target_path: true
+                remember_me: true
+            logout:
+                path:   /logout
+                target: /
 
-            # http_basic: ~
-            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
-
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+    access_control:
+       - { path: ^/projets, roles: ROLE_USER }
+       - { path: ^/,   roles: IS_AUTHENTICATED_ANONYMOUSLY }

@@ -1,6 +1,14 @@
 homepage:
     path:     /
     defaults: { _controller: FrontEndFrontOfficeBundle:Index:index }
+
+login_check:
+    path:     /login_check
+    defaults: { _controller: FrontEndFrontOfficeBundle:Index:loginCheck }
+    
+logout:
+    path:     /logout
+    defaults: { _controller: FrontEndFrontOfficeBundle:Index:logout }
     
 projets-index:
     path:     /projets
