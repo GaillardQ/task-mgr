@@ -83,7 +83,7 @@
                                     
                                     <!-- List group -->
                                     <table id="all-tasks-processing" class="table table-hover table-striped">
-                                        {% for p in projects_less %}
+                                        {% for p in projects %}
                                             <tr>
                                                 <td class="align-left list-group-item-link" onclick="location.href='{{ path('projets-details', {id: p.infos.id, name: p.infos.name}) }}'">
                                                     <span>{{ p.infos.name }}</span>
