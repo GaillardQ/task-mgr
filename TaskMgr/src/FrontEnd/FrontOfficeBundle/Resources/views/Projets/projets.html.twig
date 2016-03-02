@@ -59,15 +59,19 @@
                                     <div class="panel-heading">Tâches en cours</div>
                                     
                                     <!-- List group -->
-                                    <ul class="list-group">
+                                    <table id="all-tasks-processing" class="table table-hover table-striped">
                                         {% for t in tasks %}
-                                            <li class="list-group-item">
-                                                <span class="inline-block">{{ t.name }}</span>
-                                                <small><span class="inline-block">({{ t.project }})</span></small>
-                                                <span class="label {{ priorities[t.prio_id] }} inline-block pull-right">{{ t.prio_name }}</span>
-                                            </li>
+                                            <tr>
+                                                <td class="align-left">
+                                                    <span>{{ t.name }}</span>
+                                                    <small><span>({{ t.project }})</span></small>    
+                                                </td>
+                                                <td class="align-right">
+                                                    <span class="label {{ priorities[t.prio_id] }}">{{ t.prio_name }}</span>    
+                                                </td>
+                                            </tr>
                                         {% endfor %}
-                                    </ul>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -78,15 +82,18 @@
                                     <div class="panel-heading">Projets en cours</div>
                                     
                                     <!-- List group -->
-                                    <ul class="list-group">
-                                        {% for p in projects %}
-                                            <li class="list-group-item list-group-item-link" onclick="location.href='{{ path('projets-details', {id: p.infos.id, name: p.infos.name}) }}'">
-                                                <span class="inline-block">{{ p.infos.name }}</span>
-                                                {#<span class="label label-info inline-block">{{ p.infos.language }}</span>#}
-                                                <span class="badge inline-block pull-right">{{ p.progress }}%</span>
-                                            </li>
+                                    <table id="all-tasks-processing" class="table table-hover table-striped">
+                                        {% for p in projects_less %}
+                                            <tr>
+                                                <td class="align-left list-group-item-link" onclick="location.href='{{ path('projets-details', {id: p.infos.id, name: p.infos.name}) }}'">
+                                                    <span>{{ p.infos.name }}</span>
+                                                </td>
+                                                <td class="align-right">
+                                                    <span class="badge">{{ p.progress }}%</span>
+                                                </td>
+                                            </tr>
                                         {% endfor %}
-                                    </ul>
+                                    </table>
                                 </div>
                             </div>
                         </div>

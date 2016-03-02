@@ -24,6 +24,8 @@ class ProjectRepository extends \Doctrine\ORM\EntityRepository
         {
             $res[$v->getId()] = array(
                 'infos' => $v,
+                'tasksDone' => array(),
+                'tasksTodo' => array(),
                 'tasks' => array(),
                 'progress' => 0
             );
@@ -33,7 +35,15 @@ class ProjectRepository extends \Doctrine\ORM\EntityRepository
         foreach($tasks as $k=>$v)
         {
             $id = $v['proj_id'];
-            $res[$id]['tasks'][] = $v;
+            
+            if($v["state_id"] == Task_State::CANCELLED || $v["state_id"] == Task_State::DONE)
+            {
+                $res[$id]['tasksDone'][] = $v;   
+            }
+            else
+            {
+                $res[$id]['tasksTodo'][] = $v;   
+            }
             
             if(!array_key_exists($id, $stats))
             {
@@ -42,6 +52,7 @@ class ProjectRepository extends \Doctrine\ORM\EntityRepository
                     'closed' => 0
                 );
             }
+            $res[$id]['tasks'][] = $v;   
             
             if($v["state_id"] == Task_State::CANCELLED || $v["state_id"] == Task_State::DONE)
             {

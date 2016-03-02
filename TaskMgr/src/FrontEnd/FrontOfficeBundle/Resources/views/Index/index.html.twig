@@ -10,7 +10,8 @@
                 <div class="col-lg-12 margin-top-10vh">
                     <img id="home-logo" src="{{ asset('images/home-logo.png') }}" alt="home-logo" class="img-circle">
                     <div class="align-center">
-                        <span id="home-text">TASK MANAGER</span>
+                        <span id="home-text" class="hidden-xs">TASK MANAGER</span>
+                        <span id="home-text" class="visible-xs">TASK MGR</span>
                     </div>
                     
                     {% if error != null %}
@@ -27,7 +28,7 @@
                             <input id="login-pwd" class="form-control" type="password" required="required" name="_password" placeholder="">
                         </div>
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
-                        <div class="align-center">
+                        <div class="align-center margin-bottom-20">
                             <input type="submit" value="Se connecter" class="btn" />
                         </div>
                     </form>

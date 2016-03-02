@@ -75,9 +75,12 @@ body {
     font-size: 4.75em;
 }
 
+#all-tasks-processing td {
+    vertical-align: middle;
+}
+
 #footer
 {
-    margin-left: 225px;
     padding: 20px;
     position: relative;
     text-align: center;

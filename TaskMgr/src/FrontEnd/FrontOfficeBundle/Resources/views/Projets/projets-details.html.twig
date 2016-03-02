@@ -51,7 +51,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-primary margin-bottom-20">
                             <!-- Default panel contents -->
-                            <div class="panel-heading">Tâches</div>
+                            <div class="panel-heading">Tâches en cours (TODO, TEST)</div>
                             
                             <div class="table-responsive">
                                 <!-- Table -->
@@ -68,7 +68,7 @@
                                         </rh>
                                     </thead>
                                     <tbody>
-                                        {% for t in project.tasks %}
+                                        {% for t in project.tasksTodo %}
                                             <tr>
                                                 <td>{{ t.name }}</td>
                                                 <td>{{ t.comment }}</td>
@@ -102,7 +102,61 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12 align-center">
+                    <div class="col-lg-12">
+                        <div class="panel panel-primary margin-bottom-20">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">Tâches finies (DONE / CANCELLED)</div>
+                            
+                            <div class="table-responsive">
+                                <!-- Table -->
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="align-center">Nom</th>
+                                            <th class="align-center">Commentaire</th>
+                                            <th class="align-center">Priorité</th>
+                                            <th class="align-center">Ajouté le</th>
+                                            <th class="align-center">Etat</th>
+                                            <th class="align-center"></th>
+                                            <th class="align-center"></th>
+                                        </rh>
+                                    </thead>
+                                    <tbody>
+                                        {% for t in project.tasksDone %}
+                                            <tr>
+                                                <td>{{ t.name }}</td>
+                                                <td>{{ t.comment }}</td>
+                                                <td class="align-center">
+                                                    <span class="label {{ priorities[t.prio_id] }}">
+                                                        {{ t.prio_name }}
+                                                    </span>
+                                                </td>
+                                                <td class="align-center">{{ t.addedAt|date("d/m/Y H:i:s") }}</td>
+                                                <td class="align-center">
+                                                    <span class="label {{ states[t.state_id] }}">
+                                                        {{ t.state_name }}
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ path('tasks-edition', {project_id:project.infos.id, project_name:project.infos.name, id:t.id}) }}">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ path('tasks-delete', {project_id:project.infos.id, project_name:project.infos.name, id:t.id}) }}" onclick="return confirm('Voulez vous supprimer cette tâche ?');">
+                                                        <i class="fa fa-times"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 align-center margin-bottom-20">
                         <a href="{{ path('tasks-creation', {"project_id":project.infos.id, "project_name":project.infos.name}) }}" class="btn btn-primary">
                             <i class="fa fa-puzzle-piece"></i>&nbsp&nbspAjouter une tâche
                         </a>

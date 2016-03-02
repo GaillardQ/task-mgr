@@ -47,7 +47,8 @@ class ProjetsController extends Controller
         return $this->render('FrontEndFrontOfficeBundle:Projets:projets.html.twig', array(
             'tasks' => $tasks, 
             'priorities' => $priorities, 
-            'projects' => $projects
+            'projects_less' => $projects,
+            'projects' => $allProjects
         ));
     }
     
