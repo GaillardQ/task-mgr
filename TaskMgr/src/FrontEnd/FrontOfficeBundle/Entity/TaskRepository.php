@@ -73,6 +73,7 @@ class TaskRepository extends \Doctrine\ORM\EntityRepository
             ->orderBy('pr.id', 'ASC')
             ->addOrderBy('t.state', 'ASC')
             ->addOrderBy('t.priority', 'ASC')
+            ->addOrderBy('t.addedAt', 'ASC')
             ->getQuery();
             
         return $query->getResult();
