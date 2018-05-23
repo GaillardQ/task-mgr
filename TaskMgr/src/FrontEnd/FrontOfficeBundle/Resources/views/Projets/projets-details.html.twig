@@ -71,7 +71,7 @@
                                         {% for t in project.tasksTodo %}
                                             <tr>
                                                 <td>{{ t.name }}</td>
-                                                <td>{{ t.comment }}</td>
+                                                <td>{{ t.comment|nl2br }}</td>
                                                 <td class="align-center">
                                                     <span class="label {{ priorities[t.prio_id] }}">
                                                         {{ t.prio_name }}

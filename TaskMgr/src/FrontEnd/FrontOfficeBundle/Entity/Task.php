@@ -37,7 +37,7 @@ class Task
     /**
      * @var string
      *
-     * @ORM\Column(name="comment", type="string", length=500)
+     * @ORM\Column(name="comment", type="text")
      */
     private $comment;
 
