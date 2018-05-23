@@ -13,7 +13,7 @@ class TaskType extends AbstractType
     {
         $builder
             ->add('name', 'text', array('label' => 'Description de la tâche'))
-            ->add('comment', 'textarea', array('label' => 'Commentaire'))
+            ->add('comment', 'textarea', array('label' => 'Commentaire', 'attr' => array('rows' => 4)))
             ->add('state', 'entity', array(
                 'class' => 'FrontEndFrontOfficeBundle:Task_State',
                 'choice_label' => 'name',
