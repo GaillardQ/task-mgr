@@ -25,9 +25,10 @@ class ProjetsController extends Controller
     {
         return array(
             Task_State::TEST => 'label-info',
-            Task_State::TODO => 'label-primary',
+            Task_State::TODO => 'label-warning',
             Task_State::DONE => 'label-success',
-            Task_State::CANCELLED => 'label-default'
+            Task_State::CANCELLED => 'label-default',
+            Task_State::IN_PROGRESS => 'label-primary'
         );
     }
     

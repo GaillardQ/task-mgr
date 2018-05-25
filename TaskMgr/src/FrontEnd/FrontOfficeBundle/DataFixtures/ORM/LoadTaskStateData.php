@@ -17,19 +17,23 @@ class LoadTaskStateData implements FixtureInterface
     {
         $state1 = new Task_State();
         $state1->setId(1);
-        $state1->setName("TEST");
+        $state1->setName("2. TEST");
         
         $state2 = new Task_State();
         $state2->setId(2);
-        $state2->setName("TODO");
+        $state2->setName("3. TODO");
+
+        $state2 = new Task_State();
+        $state2->setId(3);
+        $state2->setName("1. IN PROGRESS");
         
         $state3 = new Task_State();
-        $state3->setId(3);
-        $state3->setName("DONE");
+        $state3->setId(4);
+        $state3->setName("4. DONE");
         
         $state4 = new Task_State();
-        $state4->setId(4);
-        $state4->setName("CANCELLED");
+        $state4->setId(5);
+        $state4->setName("5. CANCELLED");
 
         $manager->persist($state1);
         $manager->persist($state2);

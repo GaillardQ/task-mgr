@@ -16,6 +16,7 @@ class Task_State
     const TODO = 2;
     const DONE = 3;
     const CANCELLED = 4;
+    const IN_PROGRESS = 5;
     
     /**
      * @var integer
